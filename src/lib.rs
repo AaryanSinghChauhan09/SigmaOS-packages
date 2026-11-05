@@ -1,20 +1,29 @@
-//! SigmaOS-packages — Package management component for SigmaOS
-#![allow(dead_code)]
+#[derive(Debug, Clone)]
+pub struct PackageMeta {
+    pub name: String,
+    pub version: String,
+    pub sha256: String,
+}
 
-pub mod cache;
-pub mod config;
-pub mod error;
-pub mod installer;
-pub mod package;
-pub mod service;
+#[derive(Debug, Default)]
+pub struct PackageManager {
+    installed: Vec<PackageMeta>,
+}
 
-pub use cache::PackageCache;
-pub use config::Config;
-pub use error::{ComponentError, Result};
-pub use installer::{InstallStep, InstallTransaction, PackageInstaller};
-pub use package::{Package, PackageRepository, Version};
-pub use service::Service;
+impl PackageManager {
+    pub fn new() -> Self { Self::default() }
+    pub fn install(&mut self, meta: PackageMeta) { self.installed.push(meta); }
+    pub fn is_installed(&self, name: &str) -> bool { self.installed.iter().any(|p| p.name == name) }
+}
 
-pub fn version() -> &'static str {
-    env!("CARGO_PKG_VERSION")
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_package_manager_install_and_query() {
+        let mut pm = PackageManager::new();
+        pm.install(PackageMeta { name: "neovim".into(), version: "0.10.0".into(), sha256: "abc".into() });
+        assert!(pm.is_installed("neovim"));
+        assert!(!pm.is_installed("emacs"));
+    }
 }

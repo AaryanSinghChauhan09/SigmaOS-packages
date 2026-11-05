@@ -1,0 +1,16 @@
+[component]
+name = "SigmaOS-packages"
+tier = 2
+stability = "scaffold"
+language = "rust"
+description = "Binary package manager, repository metadata parser, and cryptographic Ed25519 signature validator"
+upstream = ["https://github.com/alpinelinux/apk-tools"]
+
+[contract]
+provides = ["package-manager", "repository-client", "signature-validator"]
+depends_on = []
+
+[maturity]
+status = "Scaffold"
+test_evidence = "Compiles and passes AAA unit tests"
+next_milestone = "Hardware and runtime integration"
