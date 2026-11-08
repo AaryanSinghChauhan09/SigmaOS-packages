@@ -3,14 +3,14 @@ name = "SigmaOS-packages"
 tier = 2
 stability = "scaffold"
 language = "rust"
-description = "Binary package manager, repository metadata parser, and cryptographic Ed25519 signature validator"
+description = "Deterministic installed-package metadata inventory with strict field validation; does not install packages or verify artifact bytes"
 upstream = ["https://github.com/alpinelinux/apk-tools"]
 
 [contract]
-provides = ["package-manager", "repository-client", "signature-validator"]
-depends_on = []
+provides = ["installed-package-inventory", "package-metadata-validation"]
+depends_on = ["SigmaOS-filesystem", "SigmaOS-kernel", "SigmaOS-network", "SigmaOS-security", "SigmaOS-system"]
 
 [maturity]
 status = "Scaffold"
 test_evidence = "Compiles and passes AAA unit tests"
-next_milestone = "Hardware and runtime integration"
+next_milestone = "Add an injected install backend and cryptographic artifact verification"

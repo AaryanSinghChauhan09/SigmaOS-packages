@@ -2,7 +2,7 @@
 name = "sigmaos_packages"
 version = "0.1.0"
 edition = "2021"
-description = "Binary package manager, repository metadata parser, and cryptographic Ed25519 signature validator"
+description = "Deterministic installed-package metadata inventory with strict field validation"
 
 [lib]
 name = "sigmaos_packages"
