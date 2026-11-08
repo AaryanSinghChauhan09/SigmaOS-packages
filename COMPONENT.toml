@@ -3,11 +3,11 @@ name = "SigmaOS-packages"
 tier = 2
 stability = "scaffold"
 language = "rust"
-description = "Deterministic installed-package metadata inventory with strict field validation; does not install packages or verify artifact bytes"
+description = "Validated package catalog, deterministic dependency planning, and installed-package metadata inventory; does not install packages or verify artifact bytes"
 upstream = ["https://github.com/alpinelinux/apk-tools"]
 
 [contract]
-provides = ["installed-package-inventory", "package-metadata-validation"]
+provides = ["package-catalog", "dependency-resolution", "installed-package-inventory", "package-metadata-validation"]
 depends_on = ["SigmaOS-filesystem", "SigmaOS-kernel", "SigmaOS-network", "SigmaOS-security", "SigmaOS-system"]
 
 [maturity]
