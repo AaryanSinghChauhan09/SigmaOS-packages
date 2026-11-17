@@ -1,7 +1,7 @@
 [component]
 name = "SigmaOS-packages"
 tier = 2
-stability = "scaffold"
+stability = "beta"
 language = "rust"
 description = "Validated package catalog, deterministic dependency planning, and installed-package metadata inventory; does not install packages or verify artifact bytes"
 upstream = ["https://github.com/alpinelinux/apk-tools"]
