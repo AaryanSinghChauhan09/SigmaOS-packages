@@ -1,9 +1,15 @@
 [package]
-name = "sigmaos_packages"
+name = "SigmaOS-packages"
 version = "0.1.0"
 edition = "2021"
-description = "Validated package catalog, deterministic dependency planning, and installed-package metadata inventory"
+license = "Apache-2.0"
+description = "SigmaOS sigmaos_packages component"
 
 [lib]
 name = "sigmaos_packages"
 path = "src/lib.rs"
+
+[dependencies]
+thiserror = "1"
+
+[dev-dependencies]

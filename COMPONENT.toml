@@ -11,6 +11,6 @@ provides = ["package-catalog", "dependency-resolution", "installed-package-inven
 depends_on = ["SigmaOS-filesystem", "SigmaOS-kernel", "SigmaOS-network", "SigmaOS-security", "SigmaOS-system"]
 
 [maturity]
-status = "Scaffold"
+status = "Implemented"
 test_evidence = "Compiles and passes AAA unit tests"
 next_milestone = "Add an injected install backend and cryptographic artifact verification"
