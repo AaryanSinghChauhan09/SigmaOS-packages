@@ -8,7 +8,7 @@ upstream = ["https://github.com/alpinelinux/apk-tools"]
 
 [contract]
 provides = ["package-catalog", "dependency-resolution", "installed-package-inventory", "package-metadata-validation"]
-depends_on = ["SigmaOS-filesystem", "SigmaOS-kernel", "SigmaOS-network", "SigmaOS-security", "SigmaOS-system"]
+depends_on = ["SigmaOS-system"]
 
 [maturity]
 status = "Implemented"
